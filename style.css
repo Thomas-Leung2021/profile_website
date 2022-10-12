@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: #111;
+}
+
+.salute {
+  height: 100vh;
+  /* make item horizontal */
+  display: flex;
+  /* Center img and text horizontally */
+  align-items: center;
+  /* Avoid img and text overflow */
+  overflow: hidden;
+}
+
+.saluteTextContainer {
+  flex: 3;
+}
+
+.saluteImageContainer {
+  flex: 1;
+}
+
+.saluteText {
+  color: #333;
+  font-size: 60vw;
+  /* Remove text cursor */
+  cursor: default;
+}
+
+.saluteImg {
+  /* Make image fits inside its container */
+  width: 100%;
+}
+
+.nameContainer {
+  height: 100vh;
+  background-color: rebeccapurple;
+}
+
+.name {
+  font-size: 20vw;
+  color: #333;
+  cursor: default;
+  /* Center text horizontal */
+  text-align: center;
+  /* Center text vertical */
+  line-height: 100vh;
+}
+
+.jobTitleContainer {
+  height: 100vh;
+}
+
+.dark {
+  background-color: darkgrey;
+}
+
+.purple {
+  background: url('./img/bg1.jpg');
+}
+
+.jobTitle {
+  font-size: 10vw;
+  color: #333;
+  line-height: 100vh;
+  cursor: default;
+}
+
+.projects {
+  display: flex;
+  /* Vertical */
+  flex-direction: column;
+  /* Add space between project title */
+  gap: 30vh;
+  padding: 0px, 100;
+}
+
+.projectsTitle {
+  font-size: 10vw;
+  color: #333;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.phone {
+  flex: 1;
+  width: 300px;
+  height: 600px;
+  position: relative;
+}
+
+.phoneScreen {
+  width: 264px;
+  height: 567px;
+  /* background-color: blue; */
+  /* Parent div should be position:relative if we use absolute */
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  border-radius: 25px;
+  overflow: scroll;
+  /* Remove scroll bar in Firefox */
+  scrollbar-width: none;
+}
+
+/* Remove scroll bar in Chrome*/
+.phoneScreen::-webkit-scrollbar {
+  display: none;
+}
+
+.phoneApp {
+  width: 100%;
+}
+
+.projectDetail{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.projectTitle {
+    font-size: 7vw;
+    color: #555;
+}
+
+.projectDesc{
+    font-size: 20px;
+    color: #555;
+    /* Ensure every line has the same length */
+    text-align: justify;
+    line-height: 40px;
+}
+
+.projectButton {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid#555;
+    color: #555;
+    cursor: pointer;
+    position: relative;
+    /* Hide the after button */
+    overflow: hidden;
+}
+
+.projectButton::after{
+    content: "View Demo";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: aliceblue;
+    /* All animation will take 1s to perform */
+    transition: 1s all;
+    /* Center the button text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* After hover it will take effect to projectButton::after */
+.projectButton:hover.projectButton::after {
+    transform: translateX(100%);
+}
+
+.laptop {
+  width: 600px;
+  height: 379px;
+  flex: 1;
+  position: relative;
+}
+
+.laptopScreen {
+  width: 463px;
+  height: 315px;
+  position: absolute;
+  top: 18px;
+  left: 68px;
+  overflow: scroll;
+  /* background-color: red; */
+  scrollbar-width: none;
+}
+
+.laptopApp {
+  width: 100%;
+}
+
+.laptopScreen::-webkit-scrollbar {
+  display: none;
+}
+
+/* Different direction for even elements */
+.project:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+/* 37:00
+https://www.youtube.com/watch?v=JbtKDbtqLiQ */
