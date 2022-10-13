@@ -208,5 +208,62 @@
   flex-direction: row-reverse;
 }
 
-/* 37:00
+.githubContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.githubTitle {
+  font-size: 100px;
+  color: #333;
+}
+
+.githubChart {
+  width: 820px;
+  text-align: center;
+}
+
+.dates {
+  padding: 10px;
+  color: #555;
+  font-size: 12px;
+  /* separate dates */
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxContainer {
+  display: flex;
+  /* Boxes are generated in JS, when the box total length
+  is >820px (defined in .githubChart), boxes will move to the next line. */
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.box {
+  width: 15px;
+  height: 15px;
+  background-color: #171c25;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 3s all ease;
+}
+
+.active:nth-child(4n){
+  background-color: #195b2c;
+}
+
+/* when move hover, odd number with 'active' class will the following CSS */
+.githubChart:hover .active:nth-child(2n+1) {
+  background-color: #195b2c;
+}
+
+.githubChart:hover .active:nth-child(2n) {
+  background-color: #063f24;
+}
+
+/* 47:00
 https://www.youtube.com/watch?v=JbtKDbtqLiQ */
