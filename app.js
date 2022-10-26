@@ -21,3 +21,26 @@ for (let i = 0; i < 365; i++) {
   el.classList = list.includes(i) ? 'box active' : 'box'; // give a class name
   boxContainer.appendChild(el); // add to boxContainer
 }
+
+
+// Create parallax effect
+const saluteTextContainer = document.querySelector('.saluteTextContainer')
+const saluteImageContainer = document.querySelector('.saluteImageContainer')
+const authorName = document.querySelector(".name")
+const jobTitleContainers = document.querySelectorAll(".jobTitleContainer") // get all jobTitleContainer Class
+const jobTitles = document.querySelectorAll(".jobTitle")
+const projectsTitle = document.querySelector(".projectsTitle")
+const phones = document.querySelectorAll(".phone")
+
+window.addEventListener("scroll", () => {
+  let offsetY = window.scrollY
+  saluteTextContainer.style.transform = `translateY(${offsetY * 0.5}px)`
+  saluteImageContainer.style.transform = `translate(${offsetY * 0.4}px, ${offsetY * 0.7}px)` // x,y-axis
+  authorName.style.transform = `translateX(${offsetY * 0.1}px)`
+  jobTitleContainers[0].style.backgroundPositionY = `${offsetY * 0.5}px`
+  jobTitleContainers[1].style.backgroundPositionY = `${-offsetY * 0.5}px`
+  jobTitles[0].style.transform = `translateX(calc(200vh - ${offsetY}px))`
+  jobTitles[1].style.transform = `translateX(calc(-300vh + ${offsetY}px))`
+  projectsTitle.style.transform = `translateY(calc(${offsetY}px))`
+  phones[0].style.transform = `translateX(calc(500vh - ${offsetY}px))`
+})
