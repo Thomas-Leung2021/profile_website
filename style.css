@@ -80,7 +80,7 @@
   flex-direction: column;
   /* Add space between project title */
   gap: 30vh;
-  padding: 0px, 100;
+  padding: 0px 100px;
 }
 
 .projectsTitle {
@@ -267,5 +267,44 @@
   background-color: #063f24;
 }
 
-/* 1:01:30
-https://www.youtube.com/watch?v=JbtKDbtqLiQ */
+.githubSm {
+  display: none;
+}
+
+/* Responsive design */
+@media screen and (max-width:1024px) {
+  .projects {
+    padding: 0 30px;
+    text-align: center;
+  }
+  .project{
+    flex-direction: column;
+    /* Prevent text got covered as we set height as 100vh before */
+    height: max-content;
+  }  
+  .project:nth-child(2n){
+    flex-direction: column;
+  }
+  .phone, .laptop{
+    transform: none !important;
+  }
+
+  .githubChart {
+    display: none;
+  }
+  .githubTitle {
+    text-align: center;
+    font-size: 10vw;
+  }
+  .githubSm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #555;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+/* https://www.youtube.com/watch?v=JbtKDbtqLiQ */
